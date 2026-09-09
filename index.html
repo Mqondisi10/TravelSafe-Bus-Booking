@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TravelSafe Bus Services | Book Your Ticket</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="bus-icon">🚌</div>
+
+        <div>
+            <h2>Travel<span>Safe</span></h2>
+            <p>BUS SERVICES</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#routes">Routes</a>
+        <a href="#schedules">Schedules</a>
+        <a href="#booking">My Bookings</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="support">
+        ☎ 24/7 Support
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="small-title">EXPLORE SOUTH AFRICA</p>
+
+        <h1>
+            Book Your
+            <span>Bus Ticket</span>
+        </h1>
+
+        <p class="hero-text">
+            Safe. Comfortable. On Time.
+        </p>
+
+        <div class="features">
+
+            <div>
+                <strong>✓</strong>
+                <p>Safe Travel</p>
+            </div>
+
+            <div>
+                <strong>★</strong>
+                <p>Comfortable Seats</p>
+            </div>
+
+            <div>
+                <strong>◷</strong>
+                <p>On-Time Departures</p>
+            </div>
+
+            <div>
+                <strong>✉</strong>
+                <p>Email Confirmation</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="main-container">
+
+
+<!-- ================= BOOKING FORM ================= -->
+
+<section class="booking-card" id="booking">
+
+    <div class="section-heading">
+
+        <div class="heading-icon">🎫</div>
+
+        <div>
+            <h2>Book Your Ticket</h2>
+            <p>Enter your details and choose your journey.</p>
+        </div>
+
+    </div>
+
+
+    <form id="bookingForm">
+
+
+        <!-- PERSONAL DETAILS -->
+
+        <h3 class="form-title">Passenger Information</h3>
+
+        <div class="form-grid">
+
+            <div class="input-group">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="fullname"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Age</label>
+
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Enter your age"
+                    min="1"
+                    max="120"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- JOURNEY -->
+
+        <h3 class="form-title">Journey Details</h3>
+
+        <div class="form-grid">
+
+            <div class="input-group">
+
+                <label>From</label>
+
+                <select id="from" required>
+
+                    <option value="">Select departure city</option>
+
+                    <option value="Johannesburg">
+                        Johannesburg
+                    </option>
+
+                    <option value="Durban">
+                        Durban
+                    </option>
+
+                    <option value="Cape Town">
+                        Cape Town
+                    </option>
+
+                    <option value="Pretoria">
+                        Pretoria
+                    </option>
+
+                    <option value="Bloemfontein">
+                        Bloemfontein
+                    </option>
+
+                    <option value="Gqeberha">
+                        Gqeberha
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>To</label>
+
+                <select id="to" required>
+
+                    <option value="">Select destination city</option>
+
+                    <option value="Johannesburg">
+                        Johannesburg
+                    </option>
+
+                    <option value="Durban">
+                        Durban
+                    </option>
+
+                    <option value="Cape Town">
+                        Cape Town
+                    </option>
+
+                    <option value="Pretoria">
+                        Pretoria
+                    </option>
+
+                    <option value="Bloemfontein">
+                        Bloemfontein
+                    </option>
+
+                    <option value="Gqeberha">
+                        Gqeberha
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Travel Date</label>
+
+                <input
+                    type="date"
+                    id="travelDate"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Travel Time</label>
+
+                <div class="time-options">
+
+                    <label class="time-card">
+
+                        <input
+                            type="radio"
+                            name="travelTime"
+                            value="Morning"
+                            data-time="09:00 AM"
+                            required
+                        >
+
+                        <span>
+                            ☀️
+                            <strong>Morning</strong>
+                            09:00 AM
+                        </span>
+
+                    </label>
+
+
+                    <label class="time-card">
+
+                        <input
+                            type="radio"
+                            name="travelTime"
+                            value="Night"
+                            data-time="08:00 PM"
+                        >
+
+                        <span>
+                            🌙
+                            <strong>Night</strong>
+                            08:00 PM
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEAT -->
+
+        <h3 class="form-title">Select Your Seat</h3>
+
+        <div class="seat-information">
+
+            <span>
+                <i class="available"></i>
+                Available
+            </span>
+
+            <span>
+                <i class="selected"></i>
+                Selected
+            </span>
+
+            <span>
+                <i class="booked"></i>
+                Booked
+            </span>
+
+        </div>
+
+
+        <div class="seats" id="seatContainer">
+
+            <!-- Seats generated by JavaScript -->
+
+        </div>
+
+
+        <!-- PRICE -->
+
+        <div class="price-box">
+
+            <div>
+
+                <span>Selected Route</span>
+
+                <strong id="routeDisplay">
+                    Please select your route
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Departure</span>
+
+                <strong id="departureDisplay">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Ticket Price</span>
+
+                <strong id="priceDisplay">
+                    R0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOK BUTTON -->
+
+        <button type="submit" class="book-button">
+
+            🎫 Book Ticket
+            <span>→</span>
+
+        </button>
+
+
+        <p id="message"></p>
+
+    </form>
+
+</section>
+
+
+
+<!-- ================= ROUTES ================= -->
+
+<section class="routes-section" id="routes">
+
+    <div class="section-title">
+
+        <p>POPULAR JOURNEYS</p>
+
+        <h2>Our Routes & Packages</h2>
+
+        <span>
+            Affordable bus travel across South Africa.
+        </span>
+
+    </div>
+
+
+    <div class="route-grid">
+
+
+        <div class="route-card">
+
+            <div class="route-image johannesburg"></div>
+
+            <div class="route-content">
+
+                <h3>Johannesburg → Durban</h3>
+
+                <p>
+                    Via Pietermaritzburg
+                </p>
+
+                <div class="route-details">
+
+                    <span>🕘 09:00 AM / 08:00 PM</span>
+
+                    <strong>R450</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="route-card">
+
+            <div class="route-image durban"></div>
+
+            <div class="route-content">
+
+                <h3>Durban → Johannesburg</h3>
+
+                <p>
+                    Via Pietermaritzburg
+                </p>
+
+                <div class="route-details">
+
+                    <span>🕘 09:00 AM / 08:00 PM</span>
+
+                    <strong>R450</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="route-card">
+
+            <div class="route-image cape-town"></div>
+
+            <div class="route-content">
+
+                <h3>Johannesburg → Cape Town</h3>
+
+                <p>
+                    Via Bloemfontein
+                </p>
+
+                <div class="route-details">
+
+                    <span>🕘 09:00 AM / 08:00 PM</span>
+
+                    <strong>R900</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="route-card">
+
+            <div class="route-image cape-town"></div>
+
+            <div class="route-content">
+
+                <h3>Cape Town → Johannesburg</h3>
+
+                <p>
+                    Via Bloemfontein
+                </p>
+
+                <div class="route-details">
+
+                    <span>🕘 09:00 AM / 08:00 PM</span>
+
+                    <strong>R900</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="route-card">
+
+            <div class="route-image pretoria"></div>
+
+            <div class="route-content">
+
+                <h3>Johannesburg → Pretoria</h3>
+
+                <p>
+                    Direct Route
+                </p>
+
+                <div class="route-details">
+
+                    <span>🕘 09:00 AM / 08:00 PM</span>
+
+                    <strong>R120</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="route-card">
+
+            <div class="route-image pretoria"></div>
+
+            <div class="route-content">
+
+                <h3>Pretoria → Johannesburg</h3>
+
+                <p>
+                    Direct Route
+                </p>
+
+                <div class="route-details">
+
+                    <span>🕘 09:00 AM / 08:00 PM</span>
+
+                    <strong>R120</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="route-card">
+
+            <div class="route-image bloemfontein"></div>
+
+            <div class="route-content">
+
+                <h3>Johannesburg → Bloemfontein</h3>
+
+                <p>
+                    Via Free State
+                </p>
+
+                <div class="route-details">
+
+                    <span>🕘 09:00 AM / 08:00 PM</span>
+
+                    <strong>R500</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="route-card">
+
+            <div class="route-image port-elizabeth"></div>
+
+            <div class="route-content">
+
+                <h3>Johannesburg → Gqeberha</h3>
+
+                <p>
+                    Via Bloemfontein
+                </p>
+
+                <div class="route-details">
+
+                    <span>🕘 09:00 AM / 08:00 PM</span>
+
+                    <strong>R750</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SCHEDULES ================= -->
+
+<section class="schedule-section" id="schedules">
+
+    <div class="section-title">
+
+        <p>TRAVEL WITH US</p>
+
+        <h2>Bus Schedules</h2>
+
+    </div>
+
+
+    <div class="schedule-table">
+
+        <div class="schedule-header">
+
+            <span>Route</span>
+            <span>Morning</span>
+            <span>Night</span>
+            <span>Price</span>
+
+        </div>
+
+
+        <div class="schedule-row">
+
+            <span>Johannesburg → Durban</span>
+            <strong>09:00 AM</strong>
+            <strong>08:00 PM</strong>
+            <b>R450</b>
+
+        </div>
+
+
+        <div class="schedule-row">
+
+            <span>Durban → Johannesburg</span>
+            <strong>09:00 AM</strong>
+            <strong>08:00 PM</strong>
+            <b>R450</b>
+
+        </div>
+
+
+        <div class="schedule-row">
+
+            <span>Johannesburg → Cape Town</span>
+            <strong>09:00 AM</strong>
+            <strong>08:00 PM</strong>
+            <b>R900</b>
+
+        </div>
+
+
+        <div class="schedule-row">
+
+            <span>Johannesburg → Pretoria</span>
+            <strong>09:00 AM</strong>
+            <strong>08:00 PM</strong>
+            <b>R120</b>
+
+        </div>
+
+
+        <div class="schedule-row">
+
+            <span>Johannesburg → Bloemfontein</span>
+            <strong>09:00 AM</strong>
+            <strong>08:00 PM</strong>
+            <b>R500</b>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-content">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                🚌 Travel<span>Safe</span>
+            </h2>
+
+            <p>BUS SERVICES</p>
+
+            <p class="footer-description">
+                Making your journey safe,
+                comfortable and memorable.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="#routes">Routes</a>
+            <a href="#schedules">Schedules</a>
+            <a href="#booking">Book Ticket</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>About Us</h3>
+
+            <p>
+                TravelSafe provides safe,
+                reliable and comfortable
+                bus transportation across
+                South Africa.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact Us</h3>
+
+            <p>☎ 24/7 Customer Support</p>
+            <p>📞 +27 11 123 4567</p>
+            <p>✉ info@travelsafe.co.za</p>
+            <p>📍 Johannesburg, South Africa</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 TravelSafe Bus Services.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
