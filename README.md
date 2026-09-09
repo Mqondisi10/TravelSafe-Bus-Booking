@@ -10,15 +10,6 @@ The system allows customers to enter their personal information, select a depart
 
 The project was developed as a portfolio project to demonstrate practical skills in **frontend development, JavaScript programming, Git/GitHub and third-party service integration**.
 
----
-
-## 🚀 Live Demo
-
-🔗 **Live Website:** Add your GitHub Pages link here
-
-🔗 **GitHub Repository:** Add your repository link here
-
----
 
 ## ✨ Features
 
